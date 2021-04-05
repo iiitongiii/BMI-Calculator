@@ -165,6 +165,7 @@ p {
 @media screen and (min-width: 1000px) {
   .container {
     min-width: 800px;
+    height: cal(80vh);
   }
 }
 /*# sourceMappingURL=style.css.map */
