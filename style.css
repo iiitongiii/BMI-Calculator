@@ -156,6 +156,7 @@ p {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    max-height: 90vh;
   }
   #showStatus {
     margin-bottom: 50px;
@@ -165,7 +166,6 @@ p {
 @media screen and (min-width: 1000px) {
   .container {
     min-width: 800px;
-    height: cal(80vh);
   }
 }
 /*# sourceMappingURL=style.css.map */
