@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="slider.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap" rel="stylesheet">
+  <title>BMI Calculator</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="main">
+      <h1>BMI Calculator</h1>
+      <p>Body mass index (BMI) is a value derived from the mass (weight) and height of a person. The BMI is defined as
+        the body mass divided by the square of the body height, and is expressed in units of kg/m2, resulting from mass
+        in kilograms and height in metres.</p>
+    </div>
+
+    <div class="select">
+      <div class="selectHeight">
+        <h4>Height</h4>
+        <input type="range" id="height" name="height" min="100" max="200" value="170" step="0.1">
+        <div id="showHeight"></div>
+        <p>cm</p>
+      </div>
+      <div class="selectWeight">
+        <h4>Weight</h4>
+        <input type="range" id="weight" name="weight" min="0" max="100" value="70" step="0.5">
+        <div id="showWeight"></div>
+        <p>kg</p>
+      </div>
+    </div>
+
+    <div class="BMI">
+      <h3>BMI</h3>
+      <div id="showBMI"></div>
+      <div id="showStatus"></div>
+    </div>
+
+  </div>
+
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js"
+  integrity="sha512-LF8ZB1iTwi4Qvkm4pekHG4a437Y9Af5ZuwbnW4GTbAWQeR2E4KW8WF+xH8b9psevV7wIlDMx1MH9YfPqgKhA/Q=="
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r127/three.min.js"
+  integrity="sha512-U4J4PbEJ2TMjFqPUSiKq7LLTHuEkPZVo0jl2fomi9pT7UAExh4xVi8KmoR7EfmyigH95aA68zpW7y3XzuoSurQ=="
+  crossorigin="anonymous"></script>
+<script src="OrbitControls.js"></script>
+<script src="3d.js"></script>
+<script src="script.js"></script>
+<script src="dat.js"></script>
+
+</html>
