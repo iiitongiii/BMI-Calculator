@@ -150,6 +150,9 @@ p {
 }
 
 @media only screen and (max-width: 600px) {
+  body {
+    overflow-x: hidden;
+  }
   p {
     font-size: 16px;
     line-height: 150%;
@@ -168,6 +171,9 @@ p {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    position: absolute;
+    top: 400px;
+    max-width: 80vw;
   }
   #showStatus {
     margin-bottom: 50px;

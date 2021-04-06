@@ -129,6 +129,10 @@ p {
   //   padding: 20px;
   // }
 
+  body {
+    overflow-x: hidden;
+  }
+
   p {
     font-size: 16px;
     line-height: 150%;
@@ -142,6 +146,9 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    top: 400px;
+    max-width: 80vw;
   }
 
   #showStatus {
