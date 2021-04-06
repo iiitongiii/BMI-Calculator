@@ -75,11 +75,18 @@ p {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  /* justify-content: start; */
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-flex: 2;
       -ms-flex: 2;
           flex: 2;
+  padding-right: 15px;
   /* border: 1px solid green; */
+}
+
+.main > p {
+  margin-top: -20px;
 }
 
 .select {
@@ -106,6 +113,11 @@ p {
 #showHeight,
 #showWeight {
   font-size: 36px;
+  display: inline-block;
+}
+
+#showHeight:hover {
+  cursor: pointer;
 }
 
 .BMI {
@@ -166,5 +178,25 @@ p {
   .container {
     min-width: 800px;
   }
+}
+
+.noise {
+  background-image: url("noise.png");
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 100;
+  mix-blend-mode: overlay;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.black {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 200;
+  background-color: #202020;
+  pointer-events: none;
 }
 /*# sourceMappingURL=style.css.map */

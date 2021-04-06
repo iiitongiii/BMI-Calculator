@@ -75,6 +75,26 @@ heightControl.onchange = function () {
   calBMI()
 }
 
+function resetHeightToDefault(){
+  height = 170 ; 
+  heightControl.value = height;
+  document.getElementById("showHeight").innerHTML = height
+}
+
+
+// let showHeight = document.getElementById("showHeight")
+// let tooltip = document.getElementById("tooltip")
+
+// showHeight.addEventListener('mouseover', () => {
+//   tooltip.style.visibility = "visible";
+//   // tooltip.style.top = showHeight.top
+//   // tooltip.style.left = showHeight.left
+// })
+
+// showHeight.addEventListener('mouseleave', () => {
+//   tooltip.style.visibility = "hidden";
+// })
+
 let cookies
 function getCookie() {
   cookies = document.cookie
@@ -99,6 +119,9 @@ function checkCookie(){
 
 function init() {
 
+  gsap.to(".black", {opacity: 0, duration: 3, delay: 0.5})
+  gsap.from(".container", {opacity: 0, duration: 1.5, delay: 1 });
+  gsap.from(".container", {y: 30, duration: 1.5 });
   getCookie()
   checkCookie()
   calBMI()

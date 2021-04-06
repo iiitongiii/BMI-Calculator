@@ -1,0 +1,176 @@
+$mainTextColor: #202020;
+
+.dg .property-name {
+  color: white;
+}
+
+.dg.main .close-button.close-bottom {
+  color: white;
+}
+
+
+* {
+  color: $mainTextColor;
+  font-family: 'Ubuntu', sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background: $mainTextColor;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+
+h1 {
+  font-weight: 400;
+  font-size: 60px;
+}
+
+
+h3 {
+  font-size: 36px;
+  font-weight: 400;
+}
+
+
+p {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.container {
+  /* position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+
+  z-index: 2;
+
+  display: flex;
+  flex-flow: row wrap;
+  max-width: 1000px;
+  min-height: 320px;
+
+  padding: 20px 40px;
+  margin-left: 20px;
+  margin-right: 20px;
+
+  background-color: #fff;
+  border-radius: 5px;
+  /* border: 3px solid green; */
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex: 2;
+  padding-right: 15px;
+  /* border: 1px solid green; */
+}
+
+.main>p {
+  margin-top: -20px;
+}
+
+.select {
+  /* border: 1px solid green; */
+  display: flex;
+}
+
+.selectHeight,
+.selectWeight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#showHeight,
+#showWeight {
+  font-size: 36px;
+  display: inline-block;
+  // position: relative;
+}
+
+#showHeight:hover {
+  cursor: pointer;
+}
+
+
+.BMI {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  /* border: 1px solid green; */
+}
+
+#showBMI {
+  font-size: 40px;
+  margin-top: -10px;
+}
+
+#showStatus {
+  font-size: 30px;
+}
+
+
+@media only screen and (max-width: 600px) {
+  // body {
+  //   background-color: rgb(178, 182, 139);
+  //   padding: 20px;
+  // }
+
+  p {
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  h1 {
+    font-size: 50px;
+  }
+
+  .container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #showStatus {
+    margin-bottom: 50px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .container {
+    min-width: 800px;
+  }
+}
+
+.noise {
+  background-image: url("noise.png");
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 100;
+  mix-blend-mode: overlay;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.black {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 200;
+  background-color: #202020;
+  pointer-events: none;
+}
