@@ -7,8 +7,8 @@ let BMI = 0
 let status = null
 let BMITextColor = document.getElementById("showBMI")
 let statusTextColor = document.getElementById("showStatus")
-let color = ["#6FCF97", "#27AE60", "#F2994A", "#EB5757"]
-let colorThree = ["0x6FCF97", "0x27AE60", "0xF2994A", "0xEB5757"]
+let color = ["#3dccd9", "#27AE60", "#F2994A", "#EB5757"]
+let colorThree = ["0x3dccd9", "0x27AE60", "0xF2994A", "0xEB5757"]
 
 function calBMI() {
   weight = weightControl.value
@@ -22,21 +22,25 @@ function calBMI() {
     BMITextColor.style.color = color[0]
     statusTextColor.style.color = color[0]
     material.color.setHex(colorThree[0])
+    gsap.to(material,  {displacementScale: 0})
   } else if (BMI >= 18.5 && BMI <= 24.9) {
     status = "一般"
     BMITextColor.style.color = color[1]
     statusTextColor.style.color = color[1]
     material.color.setHex(colorThree[1])
+    gsap.to(material,  {displacementScale: 0})
   } else if (BMI >= 25 && BMI <= 29.9) {
     status = "超重"
     BMITextColor.style.color = color[2]
     statusTextColor.style.color = color[2]
     material.color.setHex(colorThree[2])
+    gsap.to(material,  {displacementScale: BMI *0.003})
   } else if (BMI > 30) {
     status = "肥胖"
     BMITextColor.style.color = color[3]
     statusTextColor.style.color = color[3]
     material.color.setHex(colorThree[3])
+    gsap.to(material,  {displacementScale: BMI *0.006})
   }
 
   document.getElementById("showWeight").innerHTML = weight

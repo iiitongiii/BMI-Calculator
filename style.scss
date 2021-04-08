@@ -1,5 +1,9 @@
 $mainTextColor: #202020;
 
+canvas {
+  pointer-events: none;
+}
+
 .dg .property-name {
   color: white;
 }
@@ -50,7 +54,7 @@ p {
   left: 50%;
   transform: translate(-50%, -50%); */
 
-  z-index: 2;
+  z-index: 0;
 
   display: flex;
   flex-flow: row wrap;
@@ -64,6 +68,9 @@ p {
   background-color: #fff;
   border-radius: 5px;
   /* border: 3px solid green; */
+
+  opacity: 0.8;
+  backdrop-filter: blur(15px);
 }
 
 .main {
@@ -150,6 +157,7 @@ p {
     position: absolute;
     top: 40px;
     max-width: 80vw;
+    // opacity: 0.8;
   }
 
   #showStatus {
@@ -164,7 +172,7 @@ p {
 }
 
 .noise {
-  background-image: url("noise.png");
+  background-image: url("/img/noise.png");
   width: 100vw;
   height: 100vh;
   position: absolute;

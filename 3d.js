@@ -7,6 +7,8 @@ camera.position.z = 2;
 camera.position.y = 0;
 camera.position.x = 0;
 
+const displacementMap_01 = new THREE.TextureLoader().load('/img/displacementMap_01.jpg');
+
 const renderer = new THREE.WebGLRenderer({
   alpha: true,
   antialias: true
@@ -14,6 +16,15 @@ const renderer = new THREE.WebGLRenderer({
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setClearColor(0x000000, 0)
 
+const geometry = new THREE.TorusGeometry(0.4, 0.15, 32, 64);
+const material = new THREE.MeshStandardMaterial({
+  displacementMap: displacementMap_01,
+  displacementScale: 60 * 0.001,
+  wireframe: true
+});
+const cube = new THREE.Mesh(geometry, material);
+scene.add(cube);
+cube.position.y = 1
 
 window.addEventListener('resize', onWindowResize, false);
 
@@ -26,8 +37,6 @@ function onWindowResize() {
 
 }
 
-
-
 window.addEventListener('mousemove', (event) => {
 
   gsap.to(camera.position, {
@@ -39,8 +48,6 @@ window.addEventListener('mousemove', (event) => {
     duration: 3
   })
 
-  // camera.position.x = event.clientX / window.innerWidth * 2 - 1
-  // camera.position.y = -(event.clientY / window.innerHeight) * 2 -1
 })
 
 
@@ -48,13 +55,6 @@ let myCanvas = document.body.appendChild(renderer.domElement);
 myCanvas.style.position = "absolute"
 myCanvas.style.overflow = "hidden"
 
-
-// add cube
-const geometry = new THREE.TorusGeometry( 0.4, 0.15, 16, 32 );
-const material = new THREE.MeshStandardMaterial();
-const cube = new THREE.Mesh(geometry, material);
-scene.add(cube);
-cube.position.y = 1
 
 function animate() {
   requestAnimationFrame(animate);
@@ -74,13 +74,13 @@ controls.enableDamping = true;
 controls.enabled = false;
 
 //grid helper
-const gridHelper = new THREE.GridHelper(20, 20);
-scene.add(gridHelper);
+// const gridHelper = new THREE.GridHelper(20, 20);
+// scene.add(gridHelper);
 
 
 //light
 
-const light = new THREE.DirectionalLight( 0xFFFFFF );
-const helper = new THREE.DirectionalLightHelper( light, 1 );
+const light = new THREE.DirectionalLight(0xFFFFFF);
+const helper = new THREE.DirectionalLightHelper(light, 1);
 scene.add(light);
 light.intensity = 1.3;
