@@ -7,7 +7,7 @@ camera.position.z = 2;
 camera.position.y = 0;
 camera.position.x = 0;
 
-const displacementMap_01 = new THREE.TextureLoader().load('/img/displacementMap_01.jpg');
+const displacementMap_01 = new THREE.TextureLoader().load('./img/displacementMap_01.jpg');
 
 const renderer = new THREE.WebGLRenderer({
   alpha: true,
